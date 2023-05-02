@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardar</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'auth/login.css' %}">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/arima-koshi" type="text/css"/>
+    
+</head>
+<body>
+    <main>
+        
+        <form action="">
+            <h1 class="titulo">Guardar Anime</h1>
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Usuario" required="">
+                <label for="usuario" class="form__label">Nombre</label>
+            </div>
+            <br>
+
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Contraseña" required="">
+                <label for="contraseña" class="form__label">Url de la Imagen</label>
+            </div>
+            <br>
+
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider" ></span>
+            </label>
+            <span id="switch-text"></span>
+            <br><br>
+
+            <input class="boton" type="submit" value="Submit">
+        </form>
+    </main>
+    <script src="{% static 'javascript/script.js' %}"></script>
+</body>
+
+</html>

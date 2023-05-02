@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block main%}
+<main>
+    <h1>Mi lista de animes Pendientes</h1>
+    <div class="botones">
+        <a href="{% url 'form' %}" class="boton">Agregar anime</a>
+    </div>
+
+    <section>
+        {% for pendiente in pendientes %}
+        <div class="card">
+            <img src="{{ pendiente.imagen }}" alt="{{ pendiente.nombre }}">
+        </div>
+        <h2>{{ pendiente.nombre }}</h2>
+        {% endfor %}
+    </section>
+
+</main>
+{% endblock %}

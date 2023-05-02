@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block main%}
+<main>
+    <h1>Mi lista de animes Vistos</h1>
+    <div class="botones">
+        <a href="{% url 'form' %}" class="boton">Agregar anime</a>
+    </div>
+
+    <section>
+        {% for visto in vistos %}
+        <div class="card">
+            <img src="{{ visto.imagen }}" alt="{{ visto.nombre }}">
+        </div>
+        <h2>{{ visto.nombre }}</h2>
+        {% endfor %}
+    </section>
+
+</main>
+{% endblock %}

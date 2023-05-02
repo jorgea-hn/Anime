@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Galaxy - Pendientes</title>
+    {% load static %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'animes/animes.css' %}">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/arima-koshi" type="text/css"/>
+</head>
+<body>
+    <nav>
+        <ul class="topnav">
+            <li><img id="imagen" src="{% static 'images/toto.svg' %}" alt=""></li>
+
+            <li class="dropdown right">
+                <a href="javascript:void(0)" class="dropbtn">Usuario</a>
+                <div class="dropdown-content">
+                  <a href="#">Cerrar sesion</a>
+                </div>
+            </li>
+
+            <li class="right"><a href="{% url 'pendiente' %}">Pendientes</a></li>
+            <li class="right"><a href="{% url 'vistos' %}">Vistos</a></li>
+            
+        </ul>
+    </nav>
+
+    {% block main %}
+
+    {% endblock %}
+</body>
+</html>
