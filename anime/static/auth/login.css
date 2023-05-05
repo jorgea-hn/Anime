@@ -17,6 +17,7 @@ blanco : #F0FFFF
 
 main {
     /* background-image: url('/static/images/fondo.jpg'); */
+    background-image: url('https://www.todofondos.net/wp-content/uploads/40-fondos-de-pantalla-de-super-hd-galaxy.-imagen-de-galaxia-scaled.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;

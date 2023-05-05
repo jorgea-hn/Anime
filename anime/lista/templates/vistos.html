@@ -5,15 +5,27 @@
 <main>
     <h1>Mi lista de animes Vistos</h1>
     <div class="botones">
-        <a href="{% url 'form' %}" class="boton">Agregar anime</a>
+        <a href="{% url 'lista:form' %}?pagina=vistos" class="boton">Agregar anime</a>
     </div>
 
     <section>
-        {% for visto in vistos %}
-        <div class="card">
-            <img src="{{ visto.imagen }}" alt="{{ visto.nombre }}">
+        {% for anime in animes %}
+        <div class="contain">
+            <div class="card">
+                <div class="card-img">
+                    <div class="container-img">
+                        <img src="{{ anime.imagen }}"
+                    alt="">
+                    </div>
+                    <div class="card-botonera">
+                        <!-- <a id="eliminar" href="{% url 'lista:eliminar_anime' tarjeta_id=anime.id vista='vistos' %}">Eliminar</a>
+                          -->
+                          <a id="editar" href="{% url 'lista:modificar_anime' anime_id=anime.id %}">Modificar</a>
+                    </div>
+                </div>
+            </div>
+            <h2 class="card-text">{{ anime.nombre }} </h2>
         </div>
-        <h2>{{ visto.nombre }}</h2>
         {% endfor %}
     </section>
 

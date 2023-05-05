@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,34 +15,28 @@
 <body>
     <main>
         
-        <form method="post" action="{% url 'lista:guardar_anime' %}?pagina={{ request.GET.pagina }}">
+        <form method="post">
 
             {% csrf_token %}
-            {{ form.as_p }}
-            <h1 class="titulo">Guardar Anime</h1>
+            <h1 class="titulo">Modificar Anime</h1>
             <div class="form__group field">
-                <input name="nombre" type="input" class="form__field" placeholder="Nombre" required="">
+                <input class="form__field"  type="text" name="nombre" value="{{ tarjeta.nombre }}" required=""><br>
                 <label for="nombre" class="form__label">Nombre</label>
             </div>
             <br>
 
             <div class="form__group field">
-                <input name="imagen" type="input" class="form__field" placeholder="Url" required="">
+                <input name="imagen" type="input" class="form__field" placeholder="Url" >
+                <input class="form__field" type="text" name="imagen" value="{{ tarjeta.imagen }}" required=""><br>
                 <label for="imagen" class="form__label">Url de la Imagen</label>
             </div>
             <br>
 
-            <!-- <label class="switch">
-                <input type="checkbox" name="visto">
-                <span class="slider" ></span>
-            </label>
-            <span id="switch-text"></span>
-            <br><br> -->
 
             <input class="boton" type="submit" value="Guardar">
         </form>
     </main>
-    <!-- <script src="{% static 'javascript/script.js' %}"></script> -->
+
 </body>
 
 </html>

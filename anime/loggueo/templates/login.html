@@ -13,22 +13,23 @@
 </head>
 <body>
     <main>
-        <form action="">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
             <h1 class="titulo">Inicio de Sesion</h1>
 
             <div class="form__group field">
-                <input type="input" class="form__field" placeholder="Usuario" required="">
+                <input id="usuario" name="usuario" type="input" class="form__field" placeholder="Usuario" required="">
                 <label for="usuario" class="form__label">Usuario</label>
             </div>
             <br>
 
             <div class="form__group field">
-                <input type="input" class="form__field" placeholder="Contraseña" required="">
-                <label for="contraseña" class="form__label">Contraseña</label>
+                <input id="contrasena" name="contrasena" type="input" class="form__field" placeholder="Contrasena" required="">
+                <label for="contrasena" class="form__label">Contraseña</label>
             </div>
             <br><br>
 
-            <input class="boton" type="submit" value="Submit">
+            <input class="boton" type="submit" value="Log in">
           </form> 
     </main>
 </body>

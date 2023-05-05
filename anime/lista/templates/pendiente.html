@@ -4,16 +4,31 @@
 <main>
     <h1>Mi lista de animes Pendientes</h1>
     <div class="botones">
-        <a href="{% url 'form' %}" class="boton">Agregar anime</a>
+        <a href="{% url 'lista:form' %}?pagina=pendiente" class="boton">Agregar anime</a>
     </div>
 
+    
+    <!-- <p>-  - {{ anime.visto }}</p> -->
+    
+
     <section>
-        {% for pendiente in pendientes %}
-        <div class="card">
-            <img src="{{ pendiente.imagen }}" alt="{{ pendiente.nombre }}">
+        {% for anime in animes %}
+        <div class="contain">
+            <div class="card">
+                <div class="card-img">
+                    <div class="container-img">
+                        <img src="{{ anime.imagen }}"alt="">
+                    </div>
+                    <div class="card-botonera">
+                        <a id="eliminar" href="{% url 'lista:eliminar_anime' tarjeta_id=anime.id vista='pendiente' %}">Eliminar</a>
+                        <a id="editar" href="{% url 'lista:editar_anime' anime.id %}">Visto</a>
+                    </div>
+                </div>
+            </div>
+            <h2 class="card-text">{{ anime.nombre }} </h2>
         </div>
-        <h2>{{ pendiente.nombre }}</h2>
         {% endfor %}
+
     </section>
 
 </main>
