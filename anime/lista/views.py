@@ -8,13 +8,11 @@ from django.views.decorators.http import require_POST
 
 # Create your views here.
 def pendientes(request):
-    animes_pendientes = Anime.objects.filter(visto=False)
-    animes_pendientes = Anime.objects.order_by('nombre')
+    animes_pendientes = Anime.objects.filter(visto=False).order_by('nombre')
     return render(request, 'pendiente.html', {'animes': animes_pendientes})
 
 def vistos(request):
-    animes_vistos = Anime.objects.filter(visto=True)
-    animes_vistos = Anime.objects.order_by('nombre')
+    animes_vistos = Anime.objects.filter(visto=True).order_by('nombre')
     return render(request, 'vistos.html', {'animes': animes_vistos})
 
 
