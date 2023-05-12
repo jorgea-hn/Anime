@@ -74,12 +74,24 @@ WSGI_APPLICATION = 'anime.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'listaanime',
+        'USER': 'listaanime_user',
+        'PASSWORD': 'XecxU0UlNu69b9LiRl1NwgLVX9lJb1js',
+        'HOST': 'dpg-chepo6orddl9bui8b8d0-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
